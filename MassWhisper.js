@@ -37,7 +37,7 @@ var MassWhisper = MassWhisper || (function () {
     handleInput = function (msg) {
         if (msg.type == 'api' && msg.content.startsWith('!whisper')) {
 			var parms = msg.content.split(/\s+/i);
-			if (parms[1] && parms[1] == 'help') {
+			if (typeof parms[1] == 'undefined') {
                 commandHelp(msg);
 			} else {
 				commandWhisper(msg);
@@ -70,8 +70,8 @@ var MassWhisper = MassWhisper || (function () {
 
     commandHelp = function (msg) {
         // Show help dialog
-        var message = '<span style=\'' + styles.code + '\'>!callsign help</span><br>Sends this dialog to the chat window.<br><br>';
-        var message = '<span style=\'' + styles.code + '\'>!callsign message</span><br>Sends a whispered message to every character represented by a selected token.';
+        var message = '<span style=\'' + styles.code + '\'>!whisper</span><br>Sends this dialog to the chat window.<br><br>';
+        var message = '<span style=\'' + styles.code + '\'>!whisper [message]</span><br>Whispers the message to every character represented by a selected token.';
         showDialog('MassWhisper Help', message, msg.who);
     },
 

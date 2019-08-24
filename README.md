@@ -3,3 +3,5 @@ This [Roll20](http://roll20.net/) script allows the GM to send a whisper to mult
 
 ### Example
 `!whisper You feel a slight breeze coming from the doorway to your left...`
+
+Send `!whisper` to chat without a message to get a help dialog. Not that you need one.
